@@ -1,5 +1,5 @@
 {
-    "name": "MakeCode Tutorial",
+    "name": "Y3 - Simple Arcade Game - STUDENT",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -8,13 +8,17 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "Y3Lesson1.md",
+        "tilemap.g.jres",
+        "tilemap.g.ts",
+        "_locales/en-GB/Y3Lesson1.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.8.30",
+        "target": "1.10.34",
         "targetId": "arcade"
     },
     "supportedTargets": [

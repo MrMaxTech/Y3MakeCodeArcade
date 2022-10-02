@@ -1,4 +1,44 @@
-let mySprite2: Sprite = null
+# Y3 Arcade Game Tutorial
+
+## Can I make a playable arcade game?
+
+## Step 1 - Choosing a Scene
+
+Drag the ``||scene.set background image to||`` block from the ``||scene.scene||`` section to the workspace.
+Place it in the ``||loops.On Start||`` event.
+Click the Grey box to choose a background from the Gallery.
+
+```blocks
+scene.setBackgroundImage(img``)
+
+```
+## Step 2 - Choosing a Sprite
+
+Drag the ``||controller.Set MySprite to||`` command from ``||Sprites.Sprites||`` section to the workspace.
+Place it under the ``||scene.set background image to||`` command.
+Next, click the Grey Box to choose a Sprite from the Gallery.
+
+```blocks
+scene.setBackgroundImage(img``)
+let mySprite = sprites.create(img``, SpriteKind.Player)
+```
+
+## Step 3 - Adding Controls
+
+Drag the ``||controller.Move MySprite with buttons||`` command from the ``||controller.controller||`` section to the workspace.
+Place under the ``||controller.Set MySprite to||`` command.
+
+```blocks
+scene.setBackgroundImage(img``)
+let mySprite = sprites.create(img``, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+```
+
+## Step 4 - Adding a timer
+
+Drag the ``||info.StartCoutdown||`` command into the workspace.
+Place it under the ``||controller.Move MySprite with buttons||`` command.
+```blocks
 scene.setBackgroundImage(img`
     8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
     8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
@@ -141,6 +181,18 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 info.startCountdown(10)
+``` 
+
+## Step 5 - Adding Food for POINTS!
+
+Drag the ``||Loops.Forever||`` command from the ``||Loops||`` section to the workspace.
+Drag the ``||controller.Set MySprite to||`` command from ``||Sprites.Sprites||`` section to the workspace.
+Place it under the ``||Loops.Forever||`` event.
+
+Next, click the Grey Box to choose a FOOD Sprite from the Gallery.  
+Finally, set ``||Sprites.Sprite of kind||`` to ``||Sprites.Food||``
+
+```blocks
 forever(function () {
     mySprite2 = sprites.create(img`
         . . 2 2 b b b b b . . . . . . . 
@@ -160,7 +212,20 @@ forever(function () {
         . . . . . . . . . . . c 1 b c . 
         . . . . . . . . . . . . c c . . 
         `, SpriteKind.Food)
-    mySprite2.setPosition(randint(0, 100), randint(0, 100))
-    pause(2000)
-    mySprite2.destroy()
 })
+```
+To make the food appear in different places we need.
+```blocks
+
+```
+## Step 6 - Adding an enemy for DANGER!
+```blocks
+
+```
+
+## Finish, Now test your game.
+## Can you move your Sprite around the screen?
+## How can you make it move faster or slower?  Test you ideas...
+
+
+
