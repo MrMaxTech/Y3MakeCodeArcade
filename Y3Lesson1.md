@@ -185,15 +185,15 @@ info.startCountdown(10)
 
 ## Step 5 - Adding Food for POINTS!
 
-Drag the ``||Loops.Forever||`` command from the ``||Loops||`` section to the workspace.
+Drag the ``||Game.On Game Update||`` command from the ``||Game.Game||`` section to the workspace.
 Drag the ``||controller.Set MySprite to||`` command from ``||Sprites.Sprites||`` section to the workspace.
-Place it under the ``||Loops.Forever||`` event.
+Place it under the ``||Game.On Game Update||`` event.
 
 Next, click the Grey Box to choose a FOOD Sprite from the Gallery.  
 Finally, set ``||Sprites.Sprite of kind||`` to ``||Sprites.Food||``
 
 ```blocks
-forever(function () {
+game.onUpdateInterval(500, function () {
     mySprite2 = sprites.create(img`
         . . 2 2 b b b b b . . . . . . . 
         . 2 b 4 4 4 4 4 4 b . . . . . . 
@@ -212,13 +212,34 @@ forever(function () {
         . . . . . . . . . . . c 1 b c . 
         . . . . . . . . . . . . c c . . 
         `, SpriteKind.Food)
+    
 })
 ```
-To make the food appear in different places we need.
+To make the food appear in different places we need to use the ``||Sprites.Set Position||`` with the ``||Math.Random Number||`` command inside for X and Y.
 ```blocks
-
+game.onUpdateInterval(500, function () {
+    mySprite2 = sprites.create(img`
+        . . 2 2 b b b b b . . . . . . . 
+        . 2 b 4 4 4 4 4 4 b . . . . . . 
+        2 2 4 4 4 4 d d 4 4 b . . . . . 
+        2 b 4 4 4 4 4 4 d 4 b . . . . . 
+        2 b 4 4 4 4 4 4 4 d 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 b . . . . 
+        2 b 4 4 4 4 4 4 4 4 4 e . . . . 
+        2 2 b 4 4 4 4 4 4 4 b e . . . . 
+        . 2 b b b 4 4 4 b b b e . . . . 
+        . . e b b b b b b b e e . . . . 
+        . . . e e b 4 4 b e e e b . . . 
+        . . . . . e e e e e e b d b b . 
+        . . . . . . . . . . . b 1 1 1 b 
+        . . . . . . . . . . . c 1 d d b 
+        . . . . . . . . . . . c 1 b c . 
+        . . . . . . . . . . . . c c . . 
+        `, SpriteKind.Food)
+    mySprite2.setPosition(0, 0)
+})
 ```
-## Step 6 - Adding an enemy for DANGER!
+## Step 6 - Extension - Adding an enemy for DANGER!
 ```blocks
 
 ```
