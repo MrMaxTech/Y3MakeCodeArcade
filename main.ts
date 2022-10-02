@@ -1,6 +1,10 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
-    otherSprite.destroy()
+    otherSprite.destroy(effects.smiles, 200)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    otherSprite.destroy(effects.fire, 100)
 })
 let mySprite2: Sprite = null
 let mySprite3: Sprite = null
